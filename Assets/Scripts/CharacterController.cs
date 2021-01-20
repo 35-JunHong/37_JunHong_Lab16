@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
     public float Speed;
     public float rotateSpeed;
+    public GameObject scoreText;
 
     public GameObject Bullet;
     public GameObject BulletSpawn;
@@ -38,6 +40,10 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(Bullet, BulletSpawn.transform.position, transform.rotation);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
         }
     }
 }

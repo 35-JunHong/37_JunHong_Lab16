@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class EnemyScript : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            GameManagerController.instance.iCounter++;
+            GameManagerController.instance.scoreText.GetComponent<Text>().text = "Score: " + GameManagerController.instance.iCounter;
         }
     }
 }
